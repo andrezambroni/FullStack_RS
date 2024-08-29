@@ -1,4 +1,4 @@
-import http from "node:http"; // Importa o módulo HTTP nativo do Node.js
+import http from "node:http" // Importa o módulo HTTP nativo do Node.js
 
 // Cria um servidor HTTP
 // request representa a requisição recebida pelo servidor.
@@ -6,7 +6,7 @@ import http from "node:http"; // Importa o módulo HTTP nativo do Node.js
 // response.end("Hello world!") envia a string "Hello world!" como resposta e encerra a interação.
 const server = http.createServer((request, response) => {
   // Quando uma requisição é recebida, executa a função callback
-  return response.end("Hello world!"); // Envia a resposta "Hello world!" e encerra a conexão
+  return response.end("Hello sdasddas!"); // Envia a resposta "Hello world!" e encerra a conexão
 });
 
 // O servidor fica ouvindo por conexões na porta 3333
