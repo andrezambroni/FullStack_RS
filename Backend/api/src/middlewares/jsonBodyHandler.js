@@ -1,21 +1,23 @@
+// Exporta a função assíncrona jsonBodyHandler
 export async function jsonBodyHandler(request, response) {
-  // adiciona cada chunck
-  const buffers = [];
+  // Inicializa um array para armazenar os chunks de dados da requisição
+  const buffers = []
 
   // Coleta os chunks de dados da requisição
   for await (const chunk of request) {
-    buffers.push(chunk);
+    // Adiciona cada chunk ao array buffers
+    buffers.push(chunk)
   }
 
   try {
-    //concatena os cunk e converte para string
-    // em seguida, converte a string para json
-
-    request.body = JSON.parse(Buffers.concat(buffers).toString());
+    // Concatena os chunks e converte para string
+    // Em seguida, converte a string para JSON e atribui ao corpo da requisição
+    request.body = JSON.parse(Buffer.concat(buffers).toString())
   } catch (error) {
-    request.body = null;
+    // Se ocorrer um erro na conversão, define o corpo da requisição como null
+    request.body = null
   }
 
-  // define o header de responsta como json
-  response.setHeader("Content-Type", "application/json");
+  // Define o cabeçalho da resposta como JSON
+  response.setHeader("Content-Type", "application/json")
 }
